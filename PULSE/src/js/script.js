@@ -1,19 +1,81 @@
-const numberOffilms = prompt("Сколько фильмов вы уже посмотрели?", "20");
-console.log(numberOffilms);
+'use strict';
+let numberOfFilms;
+// function start() {
+// numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?", "20");
+// while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+// 	numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?", "20");
+// }
+// }
+// start();
 
 const personalMovieDB = {
-	count: numberOffilms,
+	count: numberOfFilms,
 	movies: {},
 	actors: {},
 	genres: [],
 	privat: false,
 }; 
 
-const a = prompt("Один из последних просмотренных фильмов?", "Один дома");
-const b = prompt("Как оцените?", "10");
-const c = prompt("Один из последних просмотренных фильмов?", "Один дома 2");
-const d = prompt("Как оцените?", "8");
+// function rememberMyFilms() {
+// 	for (let i = 0; i < 2; i++) {
+// 		const a = prompt("Один из последних просмотренных фильмов?", "");
+// 		const b = prompt("Как оцените?", "");
 
+// 		if (a != null && b != null && a != '' && b !='' && a.length < 50) {
+// 			personalMovieDB.movies[a] = b;
+// 		} else {
+// 			i--;
+// 		}
+// 	}
+// }
 
-	personalMovieDB.movies[a] = b;
-	personalMovieDB.movies[c] = d;
+// rememberMyFilms();
+
+// function detectPersonalLevel() {
+// 	if (personalMovieDB.count < 10) {
+// 		console.log("Посмотрено мало фильмов");
+// 	} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+// 		console.log("Класический зритель");
+// 	} else if (personalMovieDB.count <= 30) {
+// 		console.log("Посмотрено много фильмов");
+// 	} else {
+// 		console.log("Посмотрено много фильмов");
+// 	}
+// 	console.log(personalMovieDB);
+// }
+// detectPersonalLevel();
+
+function showMyDB() {
+	if (!personalMovieDB.privat){
+		console.log(personalMovieDB);
+	}
+}
+showMyDB();
+
+function writeYourGenres() {
+	for (let i = 1; i < 4; i++) {
+		const a = prompt(`Любимый жанр под номером ${i}`);
+		if (a != null && a != '') {
+			personalMovieDB.genres[i - 1] = a;
+		} else {
+			i--;
+		}
+	}
+	
+}
+writeYourGenres();
+
+/* Задание на урок:
+
+1) Первую часть задания повторить по уроку
+
+2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
+false - выводит в консоль главный объект программы
+
+3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
+"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+genres
+
+P.S. Функции вызывать не обязательно*/
+
+// Код возьмите из предыдущего домашнего задания
